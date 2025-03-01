@@ -1,0 +1,152 @@
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(214, 17%, 92%);
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 111rem;
+  margin: 2rem 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 28.2rem 26.6rem;
+  grid-template-areas:
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira";
+  gap: 2.4rem 3rem;
+}
+
+img,
+svg,
+figure {
+  display: block;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 1.7rem 0 2.3rem;
+  position: relative;
+}
+
+.card-daniel_h3 .card-jonatha_h3 {
+  margin-bottom: 1.6rem;
+}
+
+.card-kira_h3 {
+  margin-bottom: 1.6rem;
+}
+
+h4 {
+  line-height: 1.2rem;
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.card-daniel {
+  grid-area: daniel;
+}
+.card-jonathan {
+  grid-area: jonathan;
+}
+.card-jeanette {
+  grid-area: jeanette;
+}
+.card-patrick {
+  grid-area: patrick;
+}
+.card-kira {
+  grid-area: kira;
+}
+
+.card {
+  position: relative;
+  padding: 2.4rem 3.7rem 2.8rem 3rem;
+  border-radius: 1rem;
+}
+
+.pattern-quotation {
+  position: absolute;
+  top: 0;
+  right: 8.4rem;
+}
+
+.purple .gray {
+  padding: 2.4rem 3.7rem 3.6rem 3rem;
+}
+
+.white-long {
+  padding: 2.4rem 3.5rem 2.8rem 3rem;
+}
+
+.profile-pic {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+#Daniel {
+  border-color: hsla(0, 0%, 100%, 0.3);
+}
+
+#Jonathan {
+  border-color: hsl(217, 19%, 35%);
+}
+
+#patrick {
+  border-color: hsl(263, 55%, 52%);
+}
+
+p[class$="__p"] {
+  opacity: 70%;
+}
+
+.third .fourth {
+  line-height: 1.4;
+}
+
+.first .second {
+  line-height: 1.81rem;
+}
+.fifth {
+  line-height: 1.84rem;
+}
+
+span[class$="__span"] {
+  font-size: 1.1rem;
+  opacity: 50%;
+}
+
+.purple-daniel {
+    background-color: hsl(263, 55%, 52%);
+}
+
+.gray-jonathan {
+    background-color: hsl(217, 19%, 35%);
+}
+
+.black-patrick {
+    background-color: hsl(219, 29%, 14%);
+}
+
+.white-jeanette .white-long {
+    color: hsl(217, 19%, 35%);
+    background-color: (0, 0%, 100%);
+}
