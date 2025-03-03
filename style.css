@@ -1,12 +1,16 @@
-body {
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-weight: 500;
-  font-size: 1.3rem;
-  color: hsl(0, 0%, 100%);
-  background-color: hsl(214, 17%, 92%);
-  display: grid;
-  min-height: 100vh;
-  place-content: center;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+:root {
+  /* Font */
+  --fs: "Barlow Semi Condensed", sans-serif;
+  /* Primary */
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  /* Neutral */
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
 }
 
 * {
@@ -20,16 +24,15 @@ html {
   font-size: 62.5%;
 }
 
-.container {
-  width: 111rem;
-  margin: 2rem 2.4rem;
+body {
+  font-family: var(--fs);
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: var(--white);
+  min-height: 100vh;
+  background-color: var(--light-grayish-blue);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 28.2rem 26.6rem;
-  grid-template-areas:
-    "daniel daniel jonathan kira"
-    "jeanette patrick patrick kira";
-  gap: 2.4rem 3rem;
+  place-content: center;
 }
 
 img,
@@ -45,11 +48,12 @@ h3 {
   position: relative;
 }
 
-.card-daniel_h3 .card-jonatha_h3 {
+.card-daniel__h3,
+.card-jonathan__h3 {
   margin-bottom: 1.6rem;
 }
 
-.card-kira_h3 {
+.card-kira__h3 {
   margin-bottom: 1.6rem;
 }
 
@@ -57,6 +61,18 @@ h4 {
   line-height: 1.2rem;
   font-size: 1.3rem;
   position: relative;
+}
+
+.main {
+  width: 111rem;
+  margin: 2rem 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 28.2rem 26.6rem;
+  grid-template-areas:
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira";
+  gap: 2.4rem 3rem;
 }
 
 .card-daniel {
@@ -87,45 +103,49 @@ h4 {
   right: 8.4rem;
 }
 
-.purple .gray {
+.card-daniel.card,
+.card-jonathan.card {
   padding: 2.4rem 3.7rem 3.6rem 3rem;
 }
 
-.white-long {
+.card-kira.card {
   padding: 2.4rem 3.5rem 2.8rem 3rem;
 }
 
-.profile-pic {
-  width: 3.8rem;
-  height: 3.8rem;
+img[class$="__img"] {
+  width: 3.2rem;
+  height: 3.2rem;
   border-radius: 50%;
   border: 2px solid white;
 }
 
-#Daniel {
+img.card-daniel__img {
   border-color: hsla(0, 0%, 100%, 0.3);
 }
 
-#Jonathan {
-  border-color: hsl(217, 19%, 35%);
+img.card-jonathan__img {
+  border-color: var(--very-dark-grayish-blue);
 }
 
-#patrick {
-  border-color: hsl(263, 55%, 52%);
+img.card-patrick__img {
+  border-color: var(--moderate-violet);
 }
 
 p[class$="__p"] {
   opacity: 70%;
 }
 
-.third .fourth {
+.card-daniel__p,
+.card-jonathan__p {
+  line-height: 1.81rem;
+}
+
+.card-patrick__p,
+.card-jeanette__p {
   line-height: 1.4;
 }
 
-.first .second {
-  line-height: 1.81rem;
-}
-.fifth {
+.card-kira__p {
   line-height: 1.84rem;
 }
 
@@ -134,19 +154,77 @@ span[class$="__span"] {
   opacity: 50%;
 }
 
-.purple-daniel {
-    background-color: hsl(263, 55%, 52%);
+.card-daniel {
+  background-color: var(--moderate-violet);
 }
 
-.gray-jonathan {
-    background-color: hsl(217, 19%, 35%);
+.card-jonathan {
+  background-color: var(--very-dark-grayish-blue);
 }
 
-.black-patrick {
-    background-color: hsl(219, 29%, 14%);
+.card-patrick {
+  background-color: var(--very-dark-blackish-blue);
 }
 
-.white-jeanette .white-long {
-    color: hsl(217, 19%, 35%);
-    background-color: (0, 0%, 100%);
+.card-jeanette,
+.card-kira {
+  color: var(--very-dark-grayish-blue);
+  background-color: var(--white);
+}
+
+.card__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.card__name {
+  margin-left: 1.8rem;
+}
+
+@media (max-width: 1110px) {
+  .main {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 28.2rem 26.6rem 26.6rem;
+    grid-template-areas:
+      "daniel daniel jonathan"
+      "jeanette patrick patrick"
+      "kira kira kira";
+    gap: 2.4rem 3rem;
+  }
+}
+
+@media (max-width: 796px) {
+  .main {
+    margin: 4rem 2.4rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+      "daniel daniel"
+      "jonathan jonathan"
+      "jeanette jeanette"
+      "patrick patrick"
+      "kira kira";
+  }
+
+  .pattern-quotation {
+    right: 2.4rem;
+  }
+
+  .card-daniel.card,
+  .card-jonathan.card,
+  .card-jeanette.card,
+  .card-kira.card {
+    padding: 2.4rem 3.3rem 3.6rem 3.3rem;
+  }
+
+  .card-daniel.card .card-daniel__p {
+    padding: 0 1.4rem 0 0;
+  }
+
+  .card-patrick.card {
+    padding: 2.4rem 3.2rem 3.6rem 3.3rem;
+  }
 }
